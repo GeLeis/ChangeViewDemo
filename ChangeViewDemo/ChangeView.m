@@ -68,6 +68,12 @@ typedef NS_ENUM(NSInteger,LYBSlideDirection) {
 		}
 		
 		[self.itemViews removeLastObject];
+	}else if (self.slideDirection == LYBSlideDirectionNone){
+		for (UIView *subView in self.subviews) {
+			[subView removeFromSuperview];
+		}
+		
+		[self.itemViews removeAllObjects];
 	}
 	//本例中用titles做为例子，根据实际情况对models赋值
 	for (id title in models) {
